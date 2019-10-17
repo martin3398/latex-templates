@@ -35,11 +35,14 @@
 % 4 persons:
 %\newcommand\namea{Person 1 (M. Nr.: XXXXXX), Person 3 (M. Nr.: XXXXXX)}
 %\newcommand\nameb{Person 2 (M. Nr.: XXXXXX), Person 4 (M. Nr.: XXXXXX)} 
+% date:
+\newcommand\dateheader{\today}
+%\newcommand\dateheader{01. Januar 1970}
 
 % title
 \title{\textbf{homework.tex}\\[0.2em]\smaller{}subtitle}
-\author{\namea, \nameb}
-\date{\today}
+\author{\namea, \\ \nameb}
+\date{\dateheader}
 %\date{01. Januar 1970}
 
 
@@ -120,7 +123,7 @@
 \headheight 35pt
 \lhead{Übungsgruppe: \groupnumber\\\namea\\\nameb}
 \chead{}
-\rhead{\course\\Übung \hwnumber \\ \today}
+\rhead{\course\\Übung \hwnumber \\ \dateheader}
 \lfoot{}
 \cfoot{\thepage}
 \rfoot{}
