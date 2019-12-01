@@ -1,4 +1,4 @@
-\documentclass[12pt,a4]{article}
+\documentclass[12pt,a4paper]{article}
 
 % spacing
 \newcommand\spacingC{singlespacing}
@@ -13,11 +13,15 @@
 \usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
 \usepackage[\spacingC]{setspace}
 \usepackage{fancyhdr}
+\usepackage{fancyheadings}
+\usepackage{algorithm}
 \usepackage{mathrsfs}
 \usepackage{xcolor}
 \usepackage{color}
+\usepackage{ifthen}
 \usepackage{graphicx}
 \usepackage{listings}
+\usepackage{enumerate}
 \usepackage{hyperref}
 \usepackage{theorem}
 \usepackage{mathtools}
@@ -28,6 +32,7 @@
 \usepackage{tikz}
 \usepackage{blindtext}
 \usepackage{relsize}
+\usepackage{struktex}
 \usepackage{mathdots}
 \usepackage{comment}
 \usepackage[backend=biber,style=alphabetic,sorting=ynt]{biblatex}
@@ -132,6 +137,19 @@
 % note right
 \newcommand{\vermerkr}[1]{\marginpar[\fbox{\parbox{2cm}{\raggedleft #1}}]{\fbox{\parbox{2cm}{\raggedright #1}}}}
 
+% Aufgabe heading
+\newcommand{\assignment}[1]{
+	{
+		\vspace*{0.5cm}
+		\Large{\textbf{Aufgabe #1}}
+	}
+}
+
+% Enumeration bf
+\newenvironment{enumbf}[1]{\begin{enumerate}
+		\renewcommand{\labelenumi}{\textbf{(\alph{enumi})}}
+	}{\end{enumerate}}
+
 % heading
 \pagestyle{fancyplain}
 \headheight 35pt
@@ -154,5 +172,12 @@
 \begin{document}
 	% title:
 	%\maketitle
-	\section*{homework.tex}
+	\noindent\assignment{1}
+	\begin{enumbf}{a)}
+		\item
+		\begin{align*}
+		A &\Ra B\\
+		&\Lrani C
+		\end{align*}
+	\end{enumbf}
 \end{document}
