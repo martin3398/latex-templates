@@ -141,12 +141,16 @@
 \newcommand{\assignment}[1]{
 	{
 		\vspace*{0.5cm}
-		\Large{\textbf{Aufgabe #1}}
+		\noindent\Large{\textbf{Aufgabe #1}}
+		\vspace*{0.2cm}
+		\newline
 	}
 }
 
 % Enumeration bf
-\newenvironment{enumbf}[1]{\begin{enumerate}
+\newenvironment{enumbf}{
+	\vspace{-5mm}
+	\begin{enumerate}
 		\renewcommand{\labelenumi}{\textbf{(\alph{enumi})}}
 	}{\end{enumerate}}
 
@@ -172,8 +176,8 @@
 \begin{document}
 	% title:
 	%\maketitle
-	\noindent\assignment{1}
-	\begin{enumbf}{a)}
+	\assignment{1}
+	\begin{enumbf}
 		\item
 		\begin{align*}
 		A &\Ra B\\
