@@ -1,8 +1,10 @@
 TEX=$(wildcard *.tex)
 PDF=$(TEX:.tex=.pdf)
 
+all_clean: $(PDF)
+	rm -f *.aux *.bcf *.log *.out *.run.xml *.synctex.gz
+
 all: $(PDF)
-	echo $^
 
 %.pdf: %.tex
 	pdflatex $<
