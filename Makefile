@@ -1,4 +1,8 @@
-all: homework.pdf homework_ungraded.pdf
+TEX=$(wildcard *.tex)
+PDF=$(TEX:.tex=.pdf)
+
+all: $(PDF)
+	echo $^
 
 %.pdf: %.tex
 	pdflatex $<
