@@ -154,63 +154,13 @@
 \newcommand{\vermerkr}[1]{\marginpar[\fbox{\parbox{2cm}{\raggedleft #1}}]{\fbox{\parbox{2cm}{\raggedright #1}}}}
 
 % Aufgabe heading
-\newcommand{\assignmentungraded}[1]{
+\newcommand{\assignment}[1]{
 	{
 		\vspace*{0.5cm}
 		\noindent\Large{\textbf{Aufgabe #1}}
 		\vspace*{0.2cm}
 		\newline
 	}
-}
-
-\newcommand{\assignment}[2]{
-	{
-		\vspace*{0.5cm}
-		\noindent\Large{\textbf{Aufgabe #1}}
-		\hfill
-		\framebox{\ \ \ \ \ \ / \ #2 \ }
-		\vspace*{0.2cm}
-		\newline
-	}
-}
-
-% Points table
-\newcommand{\points}[2]{
-	\newcounter{n}
-	\setcounter{n}{#2}
-	\stepcounter{n}
-	\newcounter{ct}
-	\begin{flushleft}
-		\Large{
-			\begin{tabular}{*{\value{n}}{|p{0.08\textwidth}}|}
-				\hline
-				\forloop{ct}{#1}{\value{ct} < \value{n}}{\arabic{ct}&}
-				$\Sigma$\\
-				\hline
-				\forloop{ct}{#1}{\value{ct} < \value{n}}{&}\\
-				\hline
-			\end{tabular}
-		}
-	\end{flushleft}
-}
-
-\newcommand{\pointsright}[2]{
-	\newcounter{n}
-	\setcounter{n}{#2}
-	\stepcounter{n}
-	\newcounter{ct}
-	\begin{flushright}
-		\Large{
-			\begin{tabular}{*{\value{n}}{|p{0.08\textwidth}}|}
-				\hline
-				\forloop{ct}{#1}{\value{ct} < \value{n}}{\arabic{ct}&}
-				$\Sigma$\\
-				\hline
-				\forloop{ct}{#1}{\value{ct} < \value{n}}{&}\\
-				\hline
-			\end{tabular}
-		}
-	\end{flushright}
 }
 
 % Enumeration bf
@@ -245,8 +195,7 @@
 \begin{document}
 	% title:
 	%\maketitle
-	\points{1}{1}
-	\assignment{1}{10}
+	\assignment{1}
 	\begin{enumbf}
 		\item
 		\begin{align*}
