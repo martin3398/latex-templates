@@ -44,6 +44,7 @@
 \usepackage{bussproofs}
 \usepackage{bussproofs-extra}
 \usepackage{forloop}
+\usepackage[most]{tcolorbox}
 \usepackage[backend=biber,style=alphabetic,sorting=ynt]{biblatex}
 
 % header definitions
@@ -158,6 +159,14 @@
 
 % note right
 \newcommand{\vermerkr}[1]{\marginpar[\fbox{\parbox{2cm}{\raggedleft #1}}]{\fbox{\parbox{2cm}{\raggedright #1}}}}
+
+% answerbox
+\newenvironment{answerbox}[1]{
+	\begin{tcolorbox}[enhanced, height=#1]
+	}
+	{
+	\end{tcolorbox}
+}
 
 % Aufgabe heading
 \newcommand{\assignment}[1]{
