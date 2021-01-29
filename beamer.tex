@@ -1,0 +1,283 @@
+\documentclass{beamer}
+
+\mode<presentation> {
+\usetheme{Berlin}
+
+% No footer:
+%\setbeamertemplate{footline}
+% Page number footer only:
+%\setbeamertemplate{footline}[page number]
+
+% No Navigation bar:
+%\setbeamertemplate{navigation symbols}{}
+}
+
+% Title:
+\title[Short title]{Title}
+\author{Firstname Lastname}
+\institute[Institution]
+{
+	RWTH Aachen \\
+	\medskip
+	\textit{mail@mail.com}
+}
+\date{\today}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{algorithm}
+\usepackage{mathrsfs}
+\usepackage{xcolor}
+\usepackage{stmaryrd}
+\usepackage{color}
+\usepackage{ifthen}
+\usepackage{listings}
+\usepackage{enumerate}
+\usepackage{hyperref}
+\usepackage{forest}
+\usepackage{mathtools}
+\usepackage{changepage}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{booktabs}
+\usepackage{subfig}
+\usepackage{textcomp}
+\usepackage{multirow}
+\usepackage{verbatim}
+\usepackage{tikz}
+\usepackage{tikz-qtree}
+\usepackage{blindtext}
+\usepackage{relsize}
+\usepackage{mathdots}
+\usepackage{comment}
+\usepackage{bussproofs}
+\usepackage{bussproofs-extra}
+\usepackage{forloop}
+\usepackage[most]{tcolorbox}
+\usepackage[backend=biber,style=alphabetic,sorting=ynt]{biblatex}
+
+% Bibtex resource
+%\addbibresource{literature.bib}
+
+% colors
+\definecolor{lstgreen}{rgb}{0,0.6,0}
+\definecolor{lstgray}{rgb}{0.5,0.5,0.5}
+\definecolor{lstpurple}{rgb}{0.58,0,0.82}
+\definecolor{lstbg}{rgb}{0.95,0.95,0.92}
+
+% symbols:
+\def\N{\mathbb{N}}
+\def\Z{\mathbb{Z}}
+\def\R{\mathbb{R}}
+\def\C{\mathbb{C}}
+
+\newcommand\cA{\mathcal{A}}
+\newcommand\cB{\mathcal{B}}
+\newcommand\cC{\mathcal{C}}
+\newcommand\cE{\mathcal{E}}
+\newcommand\cF{\mathcal{F}}
+\newcommand\cJ{\mathcal{J}}
+\newcommand\cK{\mathcal{K}}
+\newcommand\cM{\mathcal{M}}
+\newcommand\cN{\mathcal{N}}
+\newcommand\cO{\mathcal{O}}
+\newcommand\cR{\mathcal{R}}
+\newcommand\cS{\mathcal{S}}
+\newcommand\cT{\mathcal{T}}
+
+% Structs
+\newcommand{\A}{\ensuremath{\mathfrak A}}
+\newcommand{\B}{\ensuremath{\mathfrak B}}
+\newcommand{\sC}{\ensuremath{\mathfrak C}}
+\newcommand{\I}{\ensuremath{\mathfrak I}}
+\newcommand{\fN}{\ensuremath{\mathfrak N}}
+\newcommand{\M}{\ensuremath{\mathfrak M}}
+
+% shortcuts
+\newcommand{\sseq}{{\subseteq}}
+\newcommand{\la}{{\ \leftarrow \ }}
+\newcommand{\ra}{{\ \rightarrow \ }}
+\newcommand{\Ra}{{\ \Rightarrow \ }}
+\newcommand{\Lra}{\ \Leftrightarrow \ }
+\newcommand{\La}{\ \Leftarrow \ }
+
+\newcommand{\lani}{{\leftarrow}}
+\newcommand{\rani}{{\rightarrow}}
+\newcommand{\Rani}{{\Rightarrow}}
+\newcommand{\Lrani}{\Leftrightarrow}
+\newcommand{\Lani}{\Leftarrow}
+
+\newcommand{\xor}{\ensuremath{\oplus}}
+
+\newcommand{\op}{\operatorname}
+
+% lstset java
+\lstset{frame=tb,
+	% comment for printing:
+	backgroundcolor=\color{lstbg},
+	language=Java,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	keywordstyle=\color{blue},
+	commentstyle=\color{lstgreen},
+	stringstyle=\color{lstpurple},
+	numberstyle=\scriptsize\color{lstgray},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3,
+	extendedchars=true,
+	numbers=left,
+	numbersep=5pt,
+	% additional keywords:
+	emph={},
+	emphstyle={\ttfamily\color{blue}}
+}
+\lstset{literate=
+	{Ö}{{\"O}}1
+	{Ä}{{\"A}}1
+	{Ü}{{\"U}}1
+	{ß}{{\ss}}1
+	{ü}{{\"u}}1
+	{ä}{{\"a}}1
+	{ö}{{\"o}}1
+}
+
+% note right
+\newcommand{\vermerkr}[1]{\marginpar[\fbox{\parbox{2cm}{\raggedleft #1}}]{\fbox{\parbox{2cm}{\raggedright #1}}}}
+
+% answerbox
+\newenvironment{answerbox}[1]{
+	\begin{tcolorbox}[enhanced, height=#1]
+	}
+	{
+	\end{tcolorbox}
+}
+
+% Aufgabe heading
+\newcommand{\assignmentungraded}[1]{
+	{
+		\vspace*{0.5cm}
+		\noindent\Large{\textbf{Aufgabe #1}}
+		\vspace*{0.2cm}
+		\newline
+	}
+}
+
+\newcommand{\assignment}[2]{
+	{
+		\vspace*{0.5cm}
+		\noindent\Large{\textbf{Aufgabe #1}}
+		\hfill
+		\framebox{\ \ \ \ \ \ / \ #2 \ }
+		\vspace*{0.2cm}
+		\newline
+	}
+}
+
+
+% Enumeration bf
+\newenvironment{enumbf}{
+	\vspace{-5mm}
+	\begin{enumerate}
+		\renewcommand{\labelenumi}{\textbf{(\alph{enumi})}}
+	}{\end{enumerate}}
+
+% Function
+\newcommand{\function}[5]{#1\colon #2 \ra #3, \ #1(#4) = #5}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\frametitle{Table of Contents}
+\tableofcontents
+\end{frame}
+
+% Slides:
+
+\section{Section}
+
+\subsection{Subsection}
+
+\begin{frame}
+\frametitle{First slide}
+Slide text
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Second Slide}
+\begin{itemize}
+\item 1
+\item 2
+\item 3
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Blocks}
+\begin{block}{Block 1}
+Block 1
+\end{block}
+
+\begin{block}{Block 2}
+Block 2
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Columns}
+\begin{columns}[c]
+
+\column{.45\textwidth} % Left column and width
+Left
+
+\column{.5\textwidth} % Right column and width
+Right
+
+\end{columns}
+\end{frame}
+
+
+\section{Another Section}
+
+\begin{frame}
+\frametitle{$P = NP$ or $P \neq NP$}
+\begin{theorem}[???]
+$P = NP$ or $P \neq NP$
+\end{theorem}
+\end{frame}
+
+
+\begin{frame}[fragile] % Need to use the fragile option when verbatim is used in the slide
+\frametitle{Code}
+\begin{example}[Code]
+\begin{verbatim}
+System.out.println("Hello World!");
+\end{verbatim}
+\end{example}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Literature}
+\footnotesize{
+\begin{thebibliography}{99}
+\bibitem[Author, 1970]{name} Author (1970)
+\newblock Title
+\newblock \emph{Press} 1(2), 3 -- 4.
+\end{thebibliography}
+}
+\end{frame}
+
+\end{document} 
