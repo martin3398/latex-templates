@@ -1,0 +1,56 @@
+\mode<presentation> {
+    \usetheme{Berlin}
+
+% No footer:
+%\setbeamertemplate{footline}
+% Page number footer only:
+%\setbeamertemplate{footline}[page number]
+
+% No Navigation bar:
+%\setbeamertemplate{navigation symbols}{}
+}
+
+% Title:
+\title[Short title]{Title}
+\author{Firstname Lastname}
+\institute[Institution]
+{
+    RWTH Aachen \\
+    \medskip
+    \textit{mail@mail.com}
+}
+\date{\today}
+
+% lstset java
+\lstset{frame=tb,
+% comment for printing:
+    backgroundcolor=\color{lstbg},
+    language=Java,
+    aboveskip=3mm,
+    belowskip=3mm,
+    showstringspaces=false,
+    columns=flexible,
+    basicstyle={\small\ttfamily},
+    keywordstyle=\color{blue},
+    commentstyle=\color{lstgreen},
+    stringstyle=\color{lstpurple},
+    numberstyle=\scriptsize\color{lstgray},
+    breaklines=true,
+    breakatwhitespace=true,
+    tabsize=3,
+    extendedchars=true,
+    numbers=left,
+    numbersep=5pt,
+% additional keywords:
+    emph={},
+    emphstyle={\ttfamily\color{blue}}
+}
+\lstset{literate=
+        {Ö}{{\"O}}1
+        {Ä}{{\"A}}1
+        {Ü}{{\"U}}1
+        {ß}{{\ss}}1
+        {ü}{{\"u}}1
+        {ä}{{\"a}}1
+        {ö}{{\"o}}1
+}
