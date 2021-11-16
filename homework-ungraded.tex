@@ -10,21 +10,10 @@
 \include{include/homework-config}
 
 % Aufgabe heading
-\newcommand{\assignmentungraded}[1]{
+\newcommand{\assignment}[1]{
 	{
 		\vspace*{0.5cm}
 		\noindent\Large{\textbf{Aufgabe #1}}
-		\vspace*{0.2cm}
-		\newline
-	}
-}
-
-\newcommand{\assignment}[2]{
-	{
-		\vspace*{0.5cm}
-		\noindent\Large{\textbf{Aufgabe #1}}
-		\hfill
-		\framebox{\ \ \ \ \ \ / \ #2 \ }
 		\vspace*{0.2cm}
 		\newline
 	}
@@ -35,8 +24,7 @@
 \begin{document}
 	% title:
 	%\maketitle
-	\points{1}{1}
-	\assignment{1}{10}
+	\assignment{1}
 	\begin{enumbf}
 		\item
 		\begin{align*}
