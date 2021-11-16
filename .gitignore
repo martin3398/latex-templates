@@ -1,7 +1,17 @@
 .idea
 
-*.nav
 *.pdf
+
+*.aux
+*.bcf
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.nav
 *.toc
 *.vrb
-*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls

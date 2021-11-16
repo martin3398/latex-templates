@@ -6,14 +6,14 @@ all_clean: $(PDF)
 
 all: $(PDF)
 
-%.pdf: %.tex
-	pdflatex $<
+%.pdf: %.tex chapters/* include/*
+	latexmk -pdf $<
 
 clean:
 	rm -f *.aux *.bcf *.log *.out *.run.xml *.synctex.gz *.snm include/*.aux chapters/*.aux
 
 clean_all:
-	rm -f *.aux *.bcf *.log *.out *.pdf *.run.xml *.synctex.gz *.snm include/*.aux chapters/*.aux *.nav *.toc *.vrb
+	rm -f *.aux *.bcf *.log *.out *.pdf *.run.xml *.synctex.gz *.snm include/*.aux chapters/*.aux *.nav *.toc *.vrb *.bbl *.blg *.fdb_latexmk *.fls
 
 .PHONY: clean
 .PHONY: clean_all
