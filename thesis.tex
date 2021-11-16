@@ -1,0 +1,43 @@
+\documentclass[12pt,a4paper]{book}
+
+% spacing
+\newcommand\spacingC{singlespacing}
+%\newcommand\spacingC{onehalfspacing}
+%\newcommand\spacingC{doublespacing}
+
+\include{include/includes}
+
+\include{include/thesis-config}
+
+% document
+\begin{document}
+    \begin{titlepage}
+        \centering
+        {\scshape\LARGE \university \par}
+        \vspace{1.5cm}
+        {\huge\bfseries \thetitle\par}
+        \vspace{1cm}
+        {\scshape\Large \subtitle\par}
+        \vspace{2cm}
+        \vfill
+        {\Large presented by\\\theauthor\par}
+        \vfill
+        submitted to the\par
+        \faculty
+
+        \vfill
+
+        {\large \titledate\par}
+
+        \vfill
+
+        {\large \examination\par}
+    \end{titlepage}
+    \input{chapters/abstract}
+    \newpage
+    \tableofcontents
+    \newpage
+    \input{chapters/chapters}
+    \newpage
+    \printbibliography
+\end{document}
